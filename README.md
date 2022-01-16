@@ -56,12 +56,17 @@ def path():
 app.run(host='0.0.0.0',port=5000)
 ```
 注:   
-zip拉链函数:处理请求参数  
-请求码：  
+**zip拉链函数:处理请求参数**  
+**请求码**  
 2--: 客户端与服务器通信建立  
 3--：重定向  
 4--：客户端请求错误  
 5--：服务器请求异常  
+**git的配置和github**    
+cd ~/.ssh  
+ssh-keygen -t rsa -C 'xxx@xxx.com' 生成key  
+将key加入到github  
+
 
 
 
