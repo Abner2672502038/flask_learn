@@ -1,0 +1,40 @@
+<form class="form-inline justify-content-center">
+    <div class="input-group col-md-7 col-sm-12">
+        <input class="form-control form-control-lg" type="text"
+               name="songTitle" placeholder="Search for a track" required>
+        <span class="input-group-append">
+                    <button type="submit" class="btn btn-secondary">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </span>
+    </div>
+    <div class="form-group">
+        <span class="h5"> or </span>
+        <a th:href="@{/songs/upload}" class="btn btn-primary btn-lg ml-3">Upload your own</a>
+    </div>
+</form>
+<div class="text-center mt-2">
+    <h4>All Tracks</h4>
+</div>
+<div class="row justify-content-center mt-3 text-center" id="songsContainer">
+    <div th:if="${#lists.isEmpty(page.getContent())}">
+        <h3>No songs available</h3>
+    </div>
+    <div class="col-md-2" th:each="song : ${page}" th:object="${song}">
+        <figure>
+            <img th:src="@{/images/music.png}" alt="cover" class="img-fluid">
+            <figcaption class="mt-2">
+                <h6>
+                    <a class="title" th:href="@{/songs/details/{id} (id=*{id})}"
+                       th:text="*{#strings.abbreviate(title, 20)}"
+                       th:title="*{title}">Song title</a>
+                </h6>
+                <a class="author" th:href="@{/users/profile/{username} (username=*{uploaderUsername})}"
+                   th:text="*{uploaderUsername}">Uploader</a>
+            </figcaption>
+        </figure>
+    </div>
+</div>
+<th:block th:with="pageBaseUrl='/songs/browse/js'">
+    <div th:replace="~{fragments/pagination}"></div>
+</th:block>
