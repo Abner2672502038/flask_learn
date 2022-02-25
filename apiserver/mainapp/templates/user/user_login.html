@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登录</title>
+    <style>
+        .p{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<form action="/user/login" method="post">
+    用户名：<input name="username" size="20px"><br>
+    密&nbsp&nbsp&nbsp码：<input name="password" type="password" size="20px" ><br>
+    <button>登录</button>
+</form>
+<p class="p">{{ message }}</p>
+</body>
+</html>

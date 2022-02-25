@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}银行卡界面</title>
+    <style type="text/css">
+        #div_cardbank {
+             margin: auto;
+             width: 25%;
+        }
+        #div_mes {
+            margin: auto;
+             width: 25%;
+        }
+
+    </style>
+</head>
+<body>
+<div id="div_cardbank">
+<h2 style="color: #70ABF4">{{title}}银行卡界面</h2>
+<form action="/addbank" method="post">
+    <label>卡号：</label>
+    <input name="cardId" placeholder="卡号"><br>
+    <label>密码：</label>
+    <input name="pwd" placeholder="密码"><br>
+    <button>提交</button>
+</form>
+</div>
+<div id="div_mes">
+    <div>提示信息：{{mesage}}</div>
+</div>
+</body>
+</html>

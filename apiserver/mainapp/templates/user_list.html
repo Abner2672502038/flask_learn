@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>request 属性</title>
+</head>
+<body>
+<p>当前用户：{{ nick_name }}</p>
+    <ul>
+        <li>url: {{ request.url }}</li>
+        <li>base_url: {{ request.base_url }}</li>
+        <li>host_url: {{ request.host_url }}</li>
+        <li>path: {{ request.path }}</li>
+        <li>method: {{ request.method }}</li>
+        <li>heads: {{request.headers}}</li>
+        <li>客户端IP: {{request.remote_addr}}</li>
+        <li>Cookie:  {{ request.cookies }}</li>
+
+    </ul>
+</body>
+</html>
