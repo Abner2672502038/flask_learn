@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user list</title>
+    <link rel="stylesheet" href="/s/css/my.css">
+</head>
+<body>
+<!--venv/Lib/site-packages/jinja2/filters.py-->
+    <h3 class="success">
+        {{ message|capitalize|upper }}---capitalize:首字母大写|upper全部大写
+        <p>
+            {{ "hello,%s"|format('python') }}---format：格式化字符串
+        </p>
+        <p>
+            时间：{{ time|dateformat("%Y-%m-%d %H:%M:%S") }}
+        </p>
+        <p>
+           {{ "<h3>very Good</h3>" }}
+        </p>
+        <p>
+           {{ "<h3>very Good</h3>"|safe}}
+        </p>
+         <p>
+           {{ "<h3>very Good</h3>"|striptags }}
+        </p>
+        <p>
+            职工角色：{{ list|unique|join('-') }}
+        </p>
+        <p>
+            职工角色2：{{ list|unique|list }}
+        </p>
+        <p>
+            {{ list|last }}
+        </p>
+        <p>
+            {{ list|slice(2)|join(',') }}
+        </p>
+         <p>
+            {{ list|random }}
+        </p>
+         <p>
+            {{ list|sort(case_sensitive=False) }}
+        </p>
+        <p>
+           文件大小： {{ file|filesizeformat }}
+        </p>
+        <p>
+            ￥：{{ money|moneyformat(method='cur',precision=3)}}
+        </p>
+
+
+    </h3>
+</body>
+</html>

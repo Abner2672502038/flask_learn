@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}主页{% endblock %}</title>
+    <style>
+        #left_menu {
+            display: inline-block;
+            border-right: 2px solid lightgreen;
+            height: 500px;
+            width: 300px;
+
+        }
+        #content {
+            display: inline-block;
+            background-color: #999999;
+            position: absolute;
+        }
+        .odd{
+            color: red;
+        }
+
+    </style>
+</head>
+<body>
+<div id="left_menu">
+{% block left_menu %}
+    {% from "500.html" import menu  %}
+    {{ menu() }}
+{% endblock %}
+</div>
+<div id="content">
+{% block content %}页面内容{% endblock %}
+</div>
+
+
+
+
+</body>
+</html>

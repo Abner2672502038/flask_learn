@@ -32,6 +32,11 @@ class UserDao(BaseDao):
         return super().update('userinfo',id,**data)
 
 
+    def list(self):
+        res=super().findAll("userinfo")
+        return res
+
+
 if __name__ == '__main__':
     dao=UserDao()
     user=dao.login('frank','1234')

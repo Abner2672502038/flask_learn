@@ -1,0 +1,23 @@
+{% extends "index2.html" %}
+{% block title%}index主页{% endblock %}
+{% block content%}
+{{ super() }}
+<h3> index主页内容 </h3>
+{% from "500.html" import menu %}
+<hr>
+    {{ menu() }}
+</hr>
+<hr>
+    {{ menu() }}
+</hr>
+<hr>
+    <ul>
+        <ol>
+            {% for item in menus|unique|list %}
+            <li {% if loop.index % 2 != 0 %}class="odd"{% endif %}><!--{{ loop.index}}-->{{ loop.index0}}-{{ item }}</li>
+            {% endfor %}
+        </ol>
+    </ul>
+</hr>
+{% include "500.html" %}
+{% endblock %}

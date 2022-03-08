@@ -1,0 +1,23 @@
+{% extends "list.html"%}
+{% block content %}
+<table>
+<thead>
+    <tr style="margin: 0 auto">银行列表</tr>
+    <tr>
+      <th>卡ID</th>
+      <th>银行名</th>
+      <th>银行地址</th>
+    </tr>
+</thead>
+<tbody>
+{% for item in banks%}
+<tr>
+    <th>{{ item.id }}</th>
+    <th>{{ item.bankname }}</th>
+    <th>{{ item.address }}</th>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% endblock %}

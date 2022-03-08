@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}管理页面{% endblock %}</title>
+    <style>
+        #left_menu {
+            background-color: #f9B689;
+            display: inline-block;
+            border-right: 2px solid lightgreen;
+            height: 400px;
+            width: 200px;
+
+        }
+        #right_menu {
+             background-color: #f9B689;
+            display: inline-block;
+            position: absolute;
+        }
+
+    </style>
+</head>
+<body>
+<div id="left_menu">
+    <ul>
+        {% for item in session.get("menus")%}
+        <li style="list-style: none"><a href="{{item.get('url') }}">{{ item.get("title") }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
+<div id="right_menu">
+    {% block content %}{% endblock %}
+</div>
+</body>
+</html>
